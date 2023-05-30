@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../auth/AuthContext";
 import { Login } from "../pages/login/login";
 import { RequireAuth } from "../auth/RequireAuth";
+import styles from './app.module.scss'
 
 export function App() {
   const auth = useContext(AuthContext);
@@ -15,7 +16,7 @@ export function App() {
   // }
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <hr />
       <Routes>
         <Route path="/" element={<Login />} />
