@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios, {AxiosError} from 'axios';
 
 export const httpClient = axios.create({
-  baseURL: process.env.REACT_APP_API
+  baseURL: 'http://localhost:3000/api'
 });
 
 httpClient.interceptors.request.use(
@@ -16,7 +16,7 @@ httpClient.interceptors.request.use(
     return config
   },
   error => {
-    Promise.reject(error)
+    Promise.reject(error).then(e => console.log(e));
   }
 )
 
@@ -24,12 +24,14 @@ httpClient.interceptors.response.use(
   response => {
     return response
   },
-  function (error) {
+  function (error: AxiosError) {
     const originalRequest = error.config
 
-    if (
-      error.response.status === 401
-    ) {
+    if(error.code === 'ERR_NETWORK') {
+      return Promise.reject(error)
+    }
+
+    if (error.code === '401') {
       //router.push('/login')
       return Promise.reject(error)
     }
