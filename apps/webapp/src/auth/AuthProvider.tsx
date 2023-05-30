@@ -21,12 +21,16 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     return false;
   }
 
+  const register = async (email: string, password: string, username: string) => {
+    return await useAuthApi().register(email, password, username);
+  }
+
   const logout = async () => {
     setToken('');
   }
 
   return (
-    <AuthContext.Provider value={{ login, logout }}>
+    <AuthContext.Provider value={{ login, register, logout }}>
       {children}
     </AuthContext.Provider>
   );

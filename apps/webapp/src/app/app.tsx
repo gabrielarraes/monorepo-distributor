@@ -6,6 +6,7 @@ import { AuthContext } from "../auth/AuthContext";
 import { Login } from "../pages/login/login";
 import { RequireAuth } from "../auth/RequireAuth";
 import styles from './app.module.scss'
+import {Register} from "../pages/register/register";
 
 export function App() {
   const auth = useContext(AuthContext);
@@ -19,7 +20,8 @@ export function App() {
     <div className={styles.App}>
       <hr />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/private" element={
           <RequireAuth>
             <div>

@@ -9,4 +9,17 @@ export const useAuthApi = () => ({
       httpClient.post('/auth/login', { email, password }).catch(e => console.log(e));
     return response?.data;
   },
+
+  register: async (email: string, password: string, username: string) => {
+    const response = await
+      httpClient
+        .post('/user',
+          {
+            userName: username,
+            email: email,
+            password: password,
+          })
+        .catch(e => console.log(e));
+    return response?.data;
+  }
 });
