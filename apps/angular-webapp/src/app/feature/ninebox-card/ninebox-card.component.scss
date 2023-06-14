@@ -1,0 +1,14 @@
+.card--container {
+  width: 148px;
+  height: 148px;
+  background-color: gray;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  outline: none;
+  border: none
+}

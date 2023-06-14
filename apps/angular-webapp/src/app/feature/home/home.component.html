@@ -1,0 +1,40 @@
+<div class="main-wrapper">
+  <div class="up-content-wrapper">
+    <div class="potencial">
+      <div class="potencial-content">
+        <p>PONTENCIAL</p>
+        <p class="subtitle">Potencial da equipe abaixo</p>
+      </div>
+    </div>
+    <div class="content">
+
+      <div class="rating-column">
+        <p>Alto</p>
+        <p>Médio</p>
+        <p>Baixo</p>
+      </div>
+
+      <div class="rating-row">
+        <p>Abaixo do esperado</p>
+        <p>Esperado</p>
+        <p>Acima do esperado</p>
+      </div>
+
+      <div class="content-wrapper">
+        <ng-container *ngIf="(nineboxs | async) as vm">
+          <ng-container *ngFor="let box of vm">
+            <ninebox-card [text]="box.text" [imgPath]="box.imgPath" [color]="box.color"></ninebox-card>
+          </ng-container>
+        </ng-container>
+
+      </div>
+
+    </div>
+  </div>
+  <div class="footer">
+    <div class="content">
+      <p>Desempenho</p>
+      <p class="subtitle">Cumprimento dos objetivos</p>
+    </div>
+  </div>
+</div>

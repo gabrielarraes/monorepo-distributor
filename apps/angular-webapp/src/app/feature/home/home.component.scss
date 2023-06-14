@@ -1,0 +1,119 @@
+:host {
+  display: flex;
+}
+
+.main-wrapper {
+  height: 600px;
+  width: 600px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .up-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .potencial {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+
+      .potencial-content {
+        display: flex;
+        flex-direction: column;
+        transform: rotate(-90deg);
+
+        p {
+          text-align: center;
+        }
+
+        .subtitle {
+          font-size: 8px;
+        }
+      }
+    }
+
+    .content {
+      border-left: 2px solid #ababab;
+      border-bottom: 2px solid #ababab;
+      width: 100%;
+      padding: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+      .rating-column {
+        position: absolute;
+        height: calc(calc(100% - 16px) - 10%);
+        padding-block: 68px;
+        transform: translateY(16px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 40px;
+
+        p {
+          transform: rotate(-90deg);
+        }
+      }
+
+      .rating-row {
+        position: absolute;
+        top: calc(100% - 40px);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(calc(100% - 24px) - 10%);
+        left: calc(10%);
+        padding-inline: 32px;
+
+        p {
+          &:first-child {
+            transform: translateX(16px);
+          }
+
+          width: 100%;
+          text-align: center;
+          max-width: 10ch;
+          font-size: 10px;
+        }
+      }
+
+      .content-wrapper {
+        margin-left: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+        transform: translateY(16px);
+      }
+    }
+  }
+
+  .footer {
+    width: calc(100% - 50px);
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 40px;
+
+    .content {
+      p {
+        text-align: center;
+      }
+      .subtitle {
+        font-size: 10px;
+      }
+    }
+  }
+}

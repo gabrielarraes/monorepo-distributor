@@ -1,0 +1,15 @@
+.homeContainer {
+  height: 100vh;
+  min-width: 100vw;
+
+  .navbar {
+    width: 100%;
+    height: 100px;
+    background: red;
+  }
+
+  .contentContainer {
+    width: 100%;
+    padding: 20px;
+  }
+}
